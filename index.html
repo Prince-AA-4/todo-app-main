@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main id="main-container">
+    <header class="main-header">
+      <h1>TODO</h1>
+      <button class="toggle-btn" style="border: none;"><img src="./images/icon-moon.svg" alt="theme-icon" width="15px" class="themeIcon"></button>
+    </header>
+
+    <section>
+      <input type="text" placeholder="Create todo...." aria-label="New Todo"  id="create-todo">
+    </section>
+    <section id="listings">
+      <ul id="todo-list">
+      <!-- inject list here -->
+      </ul>
+
+      <footer id="todo-footer">
+        <div id="inner-footer">
+          <p id="todos-left">items left</p>
+        
+          <div id="filters">
+            <a href="#" class="filter-btn active">All</a>
+            <a href="#" class="filter-btn">Active </a>
+            <a href="#" class="filter-btn">Completed</a>
+          </div>
+          <a href="" id="clear-completed">Clear Completed</a>
+        </div>
+        
+      </footer>
+    </section>
+    
+    
+    <p id="drag">Drag and drop to reorder list</p>
+
+  </main>
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="./js/todo.js"></script>
+</body>
+</html>

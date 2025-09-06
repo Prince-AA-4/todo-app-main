@@ -1,0 +1,84 @@
+:root {
+  --bg-light: hsl(0, 0%, 98%);
+  --bg-dark: hsl(235, 21%, 11%);
+  --text-light: hsl(235, 19%, 35%);
+  --text-dark: hsl(234, 39%, 85%);
+  --accent: hsl(220, 98%, 61%);
+  --font: 'Josefin Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease;
+  background-image: url('../images/bg-desktop-light.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+h1{
+    color: white;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  background-image: url('../images/bg-desktop-dark.jpg');
+  color: var(--text-dark);
+}
+
+#main-container{
+    width: 50%;
+    margin: 5% auto;
+    padding: 20px;
+}
+
+#create-todo {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.main-header button:hover{
+    cursor: pointer;
+}
+
+.main-header button{
+  background-color: rgba(255, 255, 255, 0.01); /* slight overlay */
+  color: white;
+  backdrop-filter: blur(0.5px); /* optional for glassy effect */
+}
+
+#inner-footer{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: #ccc;
+}
+
+.filter-btn{
+    padding: 10px;
+}
+
+#listings{
+    background-color: var(--bg-light);
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 10px 4px 10px rgba(0, 0 , 0 , 0.2);
+}
+
+#drag{
+    text-align: center;
+}
+
+/* Add layout, spacing, and hover styles next */
