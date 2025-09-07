@@ -6,7 +6,9 @@
   --accent: hsl(220, 98%, 61%);
   --font: 'Josefin Sans', sans-serif;
 }
-
+*{
+    box-sizing: border-box;
+}
 body {
   font-family: var(--font);
   background-color: var(--bg-light);
@@ -38,6 +40,15 @@ body.dark {
     padding: 0.5rem;
 }
 
+section .dark{
+    background-color: var(--bg-dark);
+    color: white;
+}
+
+footer .dark{
+    background-color: var(--bg-dark);
+}
+
 .main-header{
     display: flex;
     justify-content: space-between;
@@ -59,6 +70,7 @@ body.dark {
     gap: 2rem;
     align-items: center;
     padding: 1rem;
+    font-size: small;
 }
 
 a{
@@ -81,4 +93,23 @@ a{
     text-align: center;
 }
 
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
+}
 /* Add layout, spacing, and hover styles next */
+
+@media (max-width:768px) {
+    body{
+        background-image: url('../images/bg-mobile-light.jpg');
+        background-size: contain;
+    }
+}
