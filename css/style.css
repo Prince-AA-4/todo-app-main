@@ -78,6 +78,10 @@ a{
     color: #ccc;
 }
 
+a:hover{
+    color:var(--accent)
+}
+
 .filter-btn{
     padding: 10px;
 }
@@ -105,7 +109,54 @@ a{
   text-decoration: line-through;
   color: hsl(233, 14%, 35%);
 }
-/* Add layout, spacing, and hover styles next */
+
+.todo-item .delete-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.todo-item:hover .delete-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.custom-check input[type="checkbox"] {
+  display: inline;
+  opacity: 0;
+}
+
+.checkmark {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-check input[type="checkbox"]:checked + .checkmark {
+  background-color: var(--accent);
+  background-image: url('../images/icon-check.svg'); 
+  background-size: 7px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
 
 @media (max-width:768px) {
     body{
