@@ -6,6 +6,8 @@ const themeToggle = document.querySelector('.toggle-btn');
 const themeIcon = document.querySelector('.themeIcon');
 const itemsLeft = document.querySelector('#todos-left')
 const clearCompleted = document.querySelector('#clear-completed')
+const todoContainer = document.querySelector('#listings')
+
 
 let todos = [];
 let currentFilter = 'all';
@@ -57,6 +59,7 @@ const displayTodos =()=> {
     `;
     }
     li.style.listStyle = "none"
+    li.style.textIndent ="none"
     todoList.appendChild(li);
   });
 
@@ -102,17 +105,12 @@ clearCompleted.addEventListener('click', (e) => {
 
 
 
-
-
-
-
-
 let isDark = false;
 
 themeToggle.addEventListener('click', ()=>{
     document.body.classList.toggle('dark')
     todoInput.classList.toggle('dark')
-    todoList.classList.toggle('dark')
+    todoContainer.classList.toggle('dark')
 
     const isDark = body.classList.contains('dark');
 
