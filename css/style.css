@@ -136,7 +136,9 @@ a:hover{
   display: inline;
   opacity: 0;
 }
-
+.active{
+  color: var(--accent);
+}
 .checkmark {
   width: 15px;
   height: 15px;

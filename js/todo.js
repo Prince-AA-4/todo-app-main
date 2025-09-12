@@ -38,6 +38,8 @@ const displayTodos =()=> {
   filtered.forEach(todo => {
     const li = document.createElement('li');
     li.className = 'todo-item';
+    li.setAttribute('draggable', 'true')
+    li.dataset.id = todo.id; 
 
     if (currentFilter === 'completed'){
       li.innerHTML = `
@@ -101,6 +103,46 @@ clearCompleted.addEventListener('click', (e) => {
   e.preventDefault();
   todos = todos.filter(todo => !todo.completed);
   displayTodos();
+});
+
+let draggedItemId = 'null'
+
+todoList.addEventListener('dragstart', (e) => {
+  const li = e.target.closest('li.todo-item');
+  if (li) {
+    draggedItemId = li.dataset.id;
+    li.classList.add('dragging');
+  }
+});
+
+todoList.addEventListener('dragover', (e) => {
+  e.preventDefault(); // Necessary to allow dropping
+  const target = e.target.closest('li.todo-item');
+  if (target && target.dataset.id !== draggedItemId) {
+    target.style.borderTop = '2px solid #007BFF'; // Visual cue
+  }
+});
+
+todoList.addEventListener('dragleave', (e) => {
+  const target = e.target.closest('li.todo-item');
+  if (target) {
+    target.style.borderTop = '';
+  }
+});
+
+todoList.addEventListener('drop', (e) => {
+  e.preventDefault();
+  const target = e.target.closest('li.todo-item');
+  if (target && draggedItemId) {
+    const draggedIndex = todos.findIndex(t => t.id == draggedItemId);
+    const targetIndex = todos.findIndex(t => t.id == target.dataset.id);
+
+    const [draggedTodo] = todos.splice(draggedIndex, 1);
+    todos.splice(targetIndex, 0, draggedTodo);
+
+    draggedItemId = null;
+    displayTodos();
+  }
 });
 
 
